@@ -1,5 +1,5 @@
 class Department < ApplicationRecord
-  def course
-    Course.where({ :department_id => self.id}).first 
+  def courses
+    Course.where({ :department_id => self.id})
   end
 end
