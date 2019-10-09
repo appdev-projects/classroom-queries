@@ -38,3 +38,35 @@ describe Course, "#students" do
     expect(course.students).to match_array([first_student, third_student, fifth_student])
   end
 end
+
+describe Course, "#enrollments" do
+  it "returns the students that are enrolled in the Course", points: 1 do
+    course = Course.new
+    course.save
+
+    other_course = Course.new
+    other_course.save
+
+    first_enrollement = Enrollment.new
+    first_enrollement.course_id = course.id
+    first_enrollement.save
+
+    second_enrollement = Enrollment.new
+    second_enrollement.course_id = other_course.id
+    second_enrollement.save
+
+    third_enrollement = Enrollment.new
+    third_enrollement.course_id = course.id
+    third_enrollement.save
+
+    expect(course.enrollments).to match_array([first_enrollement, third_enrollement])
+  end
+end
+
+describe Course, "#department" do
+  it "returns the students that are enrolled in the Course", points: 1 do
+    course = Course.new
+    course.save
+
+  end
+end
