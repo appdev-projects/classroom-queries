@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 
-describe Department, "#course" do
+describe Department, "#courses" do
   it "returns the students that are enrolled in the Course", points: 1 do
     department = Department.new
     department.save
