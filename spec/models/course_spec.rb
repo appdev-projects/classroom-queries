@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: courses
+#
+#  id            :integer          not null, primary key
+#  term_offered  :string
+#  title         :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  department_id :integer
+#
+
 require "rails_helper"
 
 describe Course, "#students" do
@@ -74,5 +86,77 @@ describe Course, "#department" do
 
     expect(course.department).to eql(department)
 
+  end
+end
+
+describe Course, ".fall" do
+  it "returns the courses that are offered in Fall", points: 1 do
+    first_course = Course.new
+    first_course.term_offered = "Fall"
+    first_course.save
+    
+    second_course = Course.new
+    second_course.term_offered = "Winter"
+    second_course.save
+    
+    third_course = Course.new
+    third_course.term_offered = "Fall"
+    third_course.save
+
+    expect(Course.fall).to match_array([first_course, third_course])
+  end
+end
+
+describe Course, ".winter" do
+  it "returns the courses that are offered in Winter", points: 1 do
+    first_course = Course.new
+    first_course.term_offered = "Winter"
+    first_course.save
+    
+    second_course = Course.new
+    second_course.term_offered = "Spring"
+    second_course.save
+    
+    third_course = Course.new
+    third_course.term_offered = "Winter"
+    third_course.save
+
+    expect(Course.winter).to match_array([first_course, third_course])
+  end
+end
+
+describe Course, ".spring" do
+  it "returns the courses that are offered in Spring", points: 1 do
+    first_course = Course.new
+    first_course.term_offered = "Spring"
+    first_course.save
+    
+    second_course = Course.new
+    second_course.term_offered = "Summer"
+    second_course.save
+    
+    third_course = Course.new
+    third_course.term_offered = "Spring"
+    third_course.save
+
+    expect(Course.spring).to match_array([first_course, third_course])
+  end
+end
+
+describe Course, ".summer" do
+  it "returns the courses that are offered in Summer", points: 1 do
+    first_course = Course.new
+    first_course.term_offered = "Summer"
+    first_course.save
+    
+    second_course = Course.new
+    second_course.term_offered = "Fall"
+    second_course.save
+    
+    third_course = Course.new
+    third_course.term_offered = "Summer"
+    third_course.save
+
+    expect(Course.summer).to match_array([first_course, third_course])
   end
 end

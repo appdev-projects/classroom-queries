@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_164839) do
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
+    t.string "term_offered"
     t.integer "department_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_164839) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.integer "graduation_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
