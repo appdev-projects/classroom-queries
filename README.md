@@ -9,41 +9,58 @@
  1. Make new branches freely to experiment! _Especially_ before starting on a new task.
  1. Run `rails grade` as often as you like to see how you are doing, but **make sure you test your app manually first to make sure it matches the target's behavior first**.
 
-### Methods to define
+## Methods to define
 
-#### Course.fall
+### Course.fall
+Should return all the records in the Course table that are offered in the Fall term
 
-#### Course.winter
+### Course.winter
+Should return all the records in the Course table that are offered in the Winter term
 
-#### Course.spring
+### Course.spring
+Should return all the records in the Course table that are offered in the Spring term
 
-#### Course.summer
+### Course.summer
+Should return all the records in the Course table that are offered in the Summer term
 
-#### Course#enrollments
+### Course#enrollments
+Should return all the records in the Enrollment table that belong to the current Course
 
-#### Course#students
+### Course#students
+Should return all the records in the Student table that belong to the current Course
 
-#### Course#department
+### Course#department
+Should return the record in the Department table that belong to the current Course
 
-#### Department#enrollments
+### Department#enrollments
+Should return all the records in the Enrollment table that belong to the current Department
 
-#### Department#courses
+### Department#courses
+Should return all the records in the Course table that belong to the current Department
 
-#### Department#students
+### Department#students
+Should return all the records in the Student table that belong to the current Department
 
-#### Student#enrollments
+### Student#enrollments
+Should return all the records in the Enrollments table that belong to the current Student
 
-#### Student#courses
+### Student#courses
+Should return all the records in the Course table that belong to the current Student
 
-#### Student#departments
+### Student#departments
+Should return all the unique records in the Departments table that belong to the current Student
 
-#### Student#fall_classes
+### Student#fall_classes
+Should return all the records in the Course table that belong to the current Student and are offered if Fall Term.
 
-#### Student#winter_classes
+### Student#winter_classes
+Should return all the records in the Course table that belong to the current Student and are offered if Fall Term.
 
-#### Student#spring_classes
+### Student#spring_classes
+Should return all the records in the Course table that belong to the current Student and are offered if Fall Term.
 
-#### Student#summer_classes
+### Student#summer_classes
+Should return all the records in the Course table that belong to the current Student and are offered if Fall Term.
 
-#### Student#year
-
+### Student#year
+Should return "Freshman", "Sophomore", "Junior", "Senior", or "Alumnus" based on the current year and the current Student's graduation_year.

@@ -12,7 +12,7 @@
 require "rails_helper"
 
 describe Enrollment, "#student" do
-  it "returns the films that the actor appeared in", points: 1 do
+  it "returns the student that the enrollment belongs to", points: 1 do
     course = Course.new
     course.save
 
@@ -29,7 +29,7 @@ describe Enrollment, "#student" do
 end
 
 describe Enrollment, "#course" do
-  it "returns the course that the enrollment appeared in", points: 1 do
+  it "returns the course that the enrollment belongs to", points: 1 do
     course = Course.new
     course.save
 

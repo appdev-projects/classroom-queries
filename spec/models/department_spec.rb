@@ -9,7 +9,7 @@
 #
 
 describe Department, "#courses" do
-  it "returns the students that are enrolled in the Course", points: 1 do
+  it "returns the courses that are offered by the Department", points: 1 do
     department = Department.new
     department.save
 

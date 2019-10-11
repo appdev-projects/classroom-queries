@@ -13,7 +13,7 @@
 
 
 describe Student, "#enrollments" do
-  it "returns the courses that the student is enrolled in", points: 1 do
+  it "returns the enrollments that are associated to the student", points: 1 do
 
     student = Student.new
     student.save
@@ -77,7 +77,7 @@ describe Student, "#courses" do
 end
 
 describe Student, "#departments" do
-  it "returns the courses that the student is enrolled in", points: 1 do
+  it "returns the departments that the student is taking courses in", points: 1 do
 
     student = Student.new
     student.save
@@ -130,7 +130,7 @@ describe Student, "#departments" do
 end
 
 describe Student, "#departments" do
-  it "doesn't return duplicates", points: 1 do
+  it "doesn't return duplicate departments", points: 1 do
     
     student = Student.new
     student.save
@@ -209,7 +209,7 @@ describe Student, "#year" do
 end
 
 describe Student, "#year" do
-  it "returns approximate year based off of graduation year", points: 1 do
+  it "returns approximate student year based off of graduation year", points: 1 do
     student = Student.new
     student.graduation_year = Date.today.year + 2
     student.save
@@ -219,7 +219,7 @@ describe Student, "#year" do
 end
 
 describe Student, "#year" do
-  it "returns approximate year based off of graduation year", points: 1 do
+  it "returns approximate student year based off of graduation year", points: 1 do
     student = Student.new
     student.graduation_year = Date.today.year + 1
     student.save
@@ -229,12 +229,12 @@ describe Student, "#year" do
 end
 
 describe Student, "#year" do
-  it "returns approximate year based off of graduation year", points: 1 do
+  it "returns approximate student year based off of graduation year", points: 1 do
     student = Student.new
     student.graduation_year = Date.today.year
     student.save
 
-    expect(student.year).to eql("Alumni")
+    expect(student.year).to eql("Alumnus")
   end
 end
 

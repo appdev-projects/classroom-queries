@@ -52,7 +52,7 @@ describe Course, "#students" do
 end
 
 describe Course, "#enrollments" do
-  it "returns the students that are enrolled in the Course", points: 1 do
+  it "returns the enrollments that are associated to the Course", points: 1 do
     course = Course.new
     course.save
 
@@ -76,7 +76,7 @@ describe Course, "#enrollments" do
 end
 
 describe Course, "#department" do
-  it "returns the students that are enrolled in the Course", points: 1 do
+  it "returns the department that the Course belongs to", points: 1 do
     department = Department.new
     department.save
 
@@ -90,7 +90,7 @@ describe Course, "#department" do
 end
 
 describe Course, ".fall" do
-  it "returns the courses that are offered in Fall", points: 1 do
+  it "returns the courses that are offered in Fall term", points: 1 do
     first_course = Course.new
     first_course.term_offered = "Fall"
     first_course.save
@@ -108,7 +108,7 @@ describe Course, ".fall" do
 end
 
 describe Course, ".winter" do
-  it "returns the courses that are offered in Winter", points: 1 do
+  it "returns the courses that are offered in Winter term", points: 1 do
     first_course = Course.new
     first_course.term_offered = "Winter"
     first_course.save
@@ -126,7 +126,7 @@ describe Course, ".winter" do
 end
 
 describe Course, ".spring" do
-  it "returns the courses that are offered in Spring", points: 1 do
+  it "returns the courses that are offered in Spring term", points: 1 do
     first_course = Course.new
     first_course.term_offered = "Spring"
     first_course.save
@@ -144,7 +144,7 @@ describe Course, ".spring" do
 end
 
 describe Course, ".summer" do
-  it "returns the courses that are offered in Summer", points: 1 do
+  it "returns the courses that are offered in Summer term", points: 1 do
     first_course = Course.new
     first_course.term_offered = "Summer"
     first_course.save
