@@ -12,7 +12,7 @@ RUN curl -o $HOME/.setup https://raw.githubusercontent.com/appdev-projects/class
 
 RUN pwd
 
-RUN ls
+RUN ls -a
 
 RUN ./.setup.sh
 
