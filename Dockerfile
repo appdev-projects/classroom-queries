@@ -12,7 +12,7 @@ RUN curl -o .setup.sh https://raw.githubusercontent.com/appdev-projects/classroo
 
 RUN pwd
 
-RUN ls -a
+RUN chmod 775 .setup.sh
 
 RUN ./.setup.sh
 
