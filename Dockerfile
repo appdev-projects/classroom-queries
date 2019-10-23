@@ -10,5 +10,9 @@ WORKDIR $HOME
 
 RUN curl -o .setup https://raw.githubusercontent.com/appdev-projects/classroom-queries/master/.setup
 
+RUN pwd
+
+RUN ls
+
 RUN ./.setup.sh
 
