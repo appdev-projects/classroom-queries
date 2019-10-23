@@ -8,7 +8,7 @@ ENV HOME=/home/gitpod
 
 WORKDIR $HOME
 
-RUN curl -o .setup https://raw.githubusercontent.com/appdev-projects/classroom-queries/master/.setup
+RUN curl -o $HOME/.setup https://raw.githubusercontent.com/appdev-projects/classroom-queries/master/.setup
 
 RUN pwd
 
