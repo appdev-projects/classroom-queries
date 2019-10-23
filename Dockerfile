@@ -1,5 +1,5 @@
 FROM gitpod/workspace-full
-MAINTAINER Jelani Woods <jelani@firstdraft.com>
+LABEL maintainer="jelani@firstdraft.com"
 
 USER root
 
@@ -10,9 +10,6 @@ WORKDIR $HOME
 
 RUN curl -o .setup.sh https://raw.githubusercontent.com/appdev-projects/classroom-queries/master/.setup
 
-RUN pwd
-
 RUN chmod 775 .setup.sh
 
 RUN ./.setup.sh
-
