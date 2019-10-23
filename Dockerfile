@@ -8,6 +8,6 @@ ENV HOME=/home/gitpod
 
 WORKDIR $HOME
 
-COPY .setup.sh $HOME
+ADD https://raw.githubusercontent.com/appdev-projects/classroom-queries/master/.setup $HOME
 
 RUN ./.setup.sh
