@@ -1,2 +1,4 @@
-image:
-  file: Dockerfile
+image: jelaniwoods/appdev-base
+
+tasks:
+  - init: bin/setup
