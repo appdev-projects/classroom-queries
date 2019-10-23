@@ -14,5 +14,5 @@ RUN pwd
 
 RUN ls -a
 
-RUN ./.setup.sh
+RUN ./$HOME/.setup.sh
 
