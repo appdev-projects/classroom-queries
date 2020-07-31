@@ -135,6 +135,8 @@ GEM
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
+    faker (2.13.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     git (1.7.0)
       rchardet (~> 1.8)
@@ -350,6 +352,7 @@ DEPENDENCIES
   draft_generators!
   execjs
   factory_bot_rails
+  faker
   grade_runner!
   listen (~> 3.2)
   pg

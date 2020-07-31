@@ -1,0 +1,109 @@
+#!/usr/bin/env ruby
+require "faker"
+
+
+students = []
+20.times do |n|
+  s = { id: (314 + n), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name }
+  s[:email] = (s[:first_name] + s[:last_name] + "@school.edu").downcase
+  s[:created_at] = DateTime.now.to_s
+  s[:updated_at] = DateTime.now.to_s
+  students << s
+end
+enrollments = []
+# 4..5
+# p students
+course_titles = [
+  "Application Development",
+  "Composition",
+  "Economics",
+  "Product Management",
+  "Finance",
+  "Negotiation",
+]
+terms = ["Spring", "Summer", "Fall", "Winter"]
+ds = [64, 65, 66]
+start = 117
+cs = []
+# course_titles.each_with_index do |title, i|
+#   cs << {id: (start += 1), title: title, term_offered: terms.sample, department_id: ds.sample, created_at: Date.today.to_s, updated_at: Date.today.to_s}
+# end
+# p cs
+students = [
+  {:id=>314, :first_name=>"Nikia", :last_name=>"Fritsch", :email=>"nikiafritsch@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>315, :first_name=>"Brent", :last_name=>"Gleason", :email=>"brentgleason@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>316, :first_name=>"Bennett", :last_name=>"Runte", :email=>"bennettrunte@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>317, :first_name=>"Augustus", :last_name=>"Braun", :email=>"augustusbraun@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>318, :first_name=>"Antony", :last_name=>"Zboncak", :email=>"antonyzboncak@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>319, :first_name=>"Merilyn", :last_name=>"Spencer", :email=>"merilynspencer@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>320, :first_name=>"Courtney", :last_name=>"Bashirian", :email=>"courtneybashirian@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>321, :first_name=>"Lang", :last_name=>"Blick", :email=>"langblick@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>322, :first_name=>"Windy", :last_name=>"Turner", :email=>"windyturner@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>323, :first_name=>"Maren", :last_name=>"Heaney", :email=>"marenheaney@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>324, :first_name=>"Jenine", :last_name=>"Mante", :email=>"jeninemante@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>325, :first_name=>"Von", :last_name=>"Kassulke", :email=>"vonkassulke@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>326, :first_name=>"Andy", :last_name=>"Crona", :email=>"andycrona@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>327, :first_name=>"Darnell", :last_name=>"Kihn", :email=>"darnellkihn@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>328, :first_name=>"Lisette", :last_name=>"Beier", :email=>"lisettebeier@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>329, :first_name=>"Francie", :last_name=>"West", :email=>"franciewest@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>330, :first_name=>"Stephany", :last_name=>"Cruickshank", :email=>"stephanycruickshank@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>331, :first_name=>"Octavio", :last_name=>"Howe", :email=>"octaviohowe@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>332, :first_name=>"Reita", :last_name=>"Konopelski", :email=>"reitakonopelski@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}, 
+  {:id=>333, :first_name=>"Odis", :last_name=>"Gutmann", :email=>"odisgutmann@school.edu", :created_at=>"2020-07-31T10:29:43-05:00", :updated_at=>"2020-07-31T10:29:43-05:00"}
+]
+
+courses = [
+  {:id=>118, :title=>"Application Development", :term_offered=>"Spring", :department_id=>64, :created_at=>"2020-07-31", :updated_at=>"2020-07-31"}, 
+  {:id=>119, :title=>"Composition", :term_offered=>"Spring", :department_id=>65, :created_at=>"2020-07-31", :updated_at=>"2020-07-31"}, 
+  {:id=>120, :title=>"Economics", :term_offered=>"Summer", :department_id=>66, :created_at=>"2020-07-31", :updated_at=>"2020-07-31"}, 
+  {:id=>121, :title=>"Product Management", :term_offered=>"Fall", :department_id=>66, :created_at=>"2020-07-31", :updated_at=>"2020-07-31"}, 
+  {:id=>122, :title=>"Finance", :term_offered=>"Winter", :department_id=>66, :created_at=>"2020-07-31", :updated_at=>"2020-07-31"}, 
+  {:id=>123, :title=>"Negotiation", :term_offered=>"Winter", :department_id=>66, :created_at=>"2020-07-31", :updated_at=>"2020-07-31"},
+  {:id=>124, :title=>"American Fiction", :term_offered=>"Summer", :department_id=>65, :created_at=>"2020-07-31", :updated_at=>"2020-07-31"}, 
+  {:id=>125, :title=>"Individualizing Writing Instruction", :term_offered=>"Fall", :department_id=>65, :created_at=>"2020-07-31", :updated_at=>"2020-07-31"}
+]
+
+enrollments = []
+tmp = []
+start = 413
+students.each do |student|
+  num_courses = rand(4) + 1
+  course_ids = courses.map { |c| c[:id] }
+  num_courses.times do
+    rand_c = 0
+    while rand_c.zero?
+      # find course that current student isn't enrolled in
+      #   rand course
+      #   look to see if enrollment exists
+      #   if not, make it
+      #   else rand course again
+      rand_c = course_ids.sample
+      found = []
+      enrollments.each do |e|
+        if e[:student_id] == student[:id]
+          if e[:course_id] == rand_c
+            found << true
+            p 'try again'
+            break # try again
+          else
+            found << false
+          end
+        end
+      end
+      if found.include? true
+        rand_c = 0
+      end
+    end
+
+   x = {
+      id: (start += 1),
+      student_id: student[:id],
+      course_id: rand_c,
+      created_at: "2020-07-13",
+      updated_at: "2020-07-15"
+    }
+    enrollments << x
+  end
+end
+
+p enrollments

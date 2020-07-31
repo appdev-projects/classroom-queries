@@ -11,7 +11,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 
-
+gem 'faker'
 
 # Use Active Model has_secure_password
 gem 'bcrypt'

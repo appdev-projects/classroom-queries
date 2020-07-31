@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ClassroomQueries</title>
+    <title>Classroom Queries</title>
     <%= csrf_meta_tags %>
 
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
@@ -15,6 +15,32 @@
   </head>
 
   <body>
+    <body>
+    <table style="width: 100%; margin-bottom: 3em;" border="1">
+      <tr>
+        <td>
+          <strong>Classroom</strong>
+        </td>
+
+        <td>
+          <a href="/courses">
+            Courses
+          </a>
+        </td>
+        
+        <td>
+          <a href="/departments">
+            Departments
+          </a>
+        </td>
+
+        <td>
+          <a href="/students">
+            Students
+          </a>
+        </td>
+      </tr>
+    </table>
     <%= yield %>
   </body>
 </html>
